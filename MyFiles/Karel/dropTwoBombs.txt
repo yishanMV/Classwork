@@ -1,0 +1,33 @@
+/*
+F1 = moveForward();
+F2 = turnLeft();
+F3 = turnAround();
+F4 = turnRight();
+F5 = pickBeeper();
+F6 = dropBeeper();
+*/
+
+void defuseTwoBombs()
+{
+    moveUntilDetect();
+    pickBeeper();
+    turnAround();
+    moveUntilDetect();
+    turnRight();
+    moveUntilDetect();
+    pickBeeper();
+    turnAround();
+    moveUntilDetect();
+    turnAround();
+    
+}
+
+void moveUntilDetect()
+{
+    while(! onBeeper() && frontIsClear())
+    {
+        moveForward();
+    }
+}
+
+
